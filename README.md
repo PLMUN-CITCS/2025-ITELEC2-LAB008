@@ -92,8 +92,9 @@ Only perform this if this is the first time you will setup your Git Environment
    ```
 
    **Desired Output (Example 2):***(No output)*
-   (Example 1) - If temperature is greater than 30.
-   (Example 2) - If temperature is 30 or less.
+   
+   - (Example 1) - If temperature is greater than 30.
+   - (Example 2) - If temperature is 30 or less.
       
    **Notable Observations (to be discussed after completing the exercise):**
    - The code inside the if statement block only executes if the condition is True.
