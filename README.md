@@ -1,7 +1,7 @@
-# 2025-ITELEC2-LAB007
-Week 02 - Python Variables, Operators and I/O Statements
+# 2025-ITELEC2-LAB008
+Week 04 - Conditional Statements
 
-Laboratory # 07 - Combined Application Exercise in Python
+Laboratory # 08 - Guided Coding Exercise: Simple if Statement in Python
 
 ## **Instructions**
 
@@ -77,99 +77,78 @@ Only perform this if this is the first time you will setup your Git Environment
 
 ### **Step 3: Complete the Assignment**
 
-**Laboratory # 07 - Combined Application Exercise in Python**
+**Laboratory # 08 - Guided Coding Exercise: Simple if Statement in Python**
 
    **Objective:**
-   This exercise combines the concepts of variables, input/output, arithmetic operators, and the math library to create a more comprehensive program.  You will learn to:
-   - Get numerical input from the user.
-   - Perform arithmetic operations on the input.
-   - Use the math library for more advanced calculations (square root and sine).
-   - Display the results in a clear and formatted way.
-   - Handle a potential error (negative input for square root).
+   - Understand the syntax and structure of a basic if statement.
+   - Learn how a condition controls the execution of a code block.
+   - Practice using comparison operators in conditional statements.
+   - Understand the importance of indentation in Python.
 
-   **Desired Output:**
+   **Desired Output (Example 1):**
    ```bash
-   Enter a number to perform operations on: 
-   Arithmetic Operations:
-   User number + 10 = 35.00
-   User number - 5  = 20.00
-   User number * 2  = 50.00
-   User number / 3  = 8.33
-
-   Math Library Functions:
-   Square root of 25.00 is: 5.0
-   Sine of 25.00 degrees is: 0.4226
+   It's a hot day!
+   
    ```
+
+   **Desired Output (Example 2):***(No output)*
+   (Example 1) - If temperature is greater than 30.
+   (Example 2) - If temperature is 30 or less.
       
    **Notable Observations (to be discussed after completing the exercise):**
-   - This exercise demonstrates how to combine different programming concepts to build a more functional program.
-   - It reinforces the importance of data type conversion (using float() in this case).
-   - It shows how to use the math library for more advanced mathematical operations.
-   - It introduces basic error handling (checking for negative input before calculating the square root).
-   - It emphasizes the importance of clear and formatted output.
-   - It uses f-strings for cleaner and more readable formatting.
+   - The code inside the if statement block only executes if the condition is True.
+   - Indentation is crucial in Python. It defines the code block associated with the if statement. Incorrect indentation will lead to errors.
+   - The > operator is used for "greater than" comparison. Other comparison operators include: 
+      - < (less than)
+      - >= (greater than or equal to)
+      - <= (less than or equal to)
+      - == (equal to)
+      - != (not equal to)
+   - Variables can be used in the condition. This makes the if statement dynamic.
 
    **Python Best Practices**
-   - Input is String, Convert It: input() gives you text. Use float() (or int()) to make it a number before math.
-   - Math Module Still Needed: import math if you're using math functions like sqrt() or sin().
-   - Radians for Trig: math.sin(), math.cos(), math.tan() need radians. Convert from degrees with math.radians().
-   - Handle Errors: Check for potential problems (like a negative square root) and do something sensible. Don't let your program crash!
-   - Format Output: Make your results easy to read. F-strings (e.g., f"{variable:.2f}") are great for this.
-   - Combine Skills: This exercise shows how to put everything together: input, math, output, and error handling. That's how you build real programs!
+   - Descriptive Variable Names: Use clear and descriptive variable names (e.g., temperature instead of t). This improves code readability.
+   - Comments: Add comments to explain your code's logic, especially for more complex conditions.
+   - Consistent Indentation: Maintain consistent indentation (4 spaces per level is the recommended standard in Python). This is essential for Python's syntax.
+   - Meaningful Conditions: Write conditions that are clear and easy to understand.
+   - Test Thoroughly: Test your code with different inputs to ensure it behaves as expected in various scenarios (e.g., when the condition is true and when it's false).
 
    **Step-by-Step Instructions:**
 
    1. Setting up: Open your preferred Python environment or Text Editor, and create a Python Script.
-      - Required Filename: `exercise_05.py`
+      - Required Filename: `if_statement_basic.py`
       
-   2.  Get numerical input:
-      - Use the input() function to prompt the user to enter a number. Store the input in a variable named user_number.
-      - Crucially, convert the input string to a float using the float() function. This allows you to work with decimal numbers.
+   2.  Define a variable:
+      - Create a variable named temperature. Assign it a numeric value (e.g., 35). You can change this value later to test different scenarios.
 ```python
-user_number = float(input("Enter a number to perform operations on: "))
+temperature = 35  # Or any other number
 ```
       
-   3.  Perform arithmetic operations:
-      - Perform addition, subtraction, multiplication, and division operations on user_number. Store the results in appropriately named variables (e.g., addition, subtraction, multiplication, division).
+   3.  Write an if statement:
+      - Use the if keyword followed by a condition. The condition should check if temperature is greater than 30. End the line with a colon (:).
 ```python
-addition = user_number + 10
-subtraction = user_number - 5
-multiplication = user_number * 2
-division = user_number / 3
+if temperature > 30:
 ```
 
-   4. Use math library functions:
-      - Import the math module if you haven't already done so at the top of your file.
-      - Calculate the square root of user_number. However, check if user_number is negative. The square root of a negative number is undefined in the real number system. If it's negative, store an appropriate message (e.g., "Undefined for negative numbers") in the sqrt_value variable. Otherwise, calculate and store the square root.
-      - Calculate the sine of user_number. Assume the user is entering the angle in degrees. Use math.radians() to convert it to radians before using math.sin().
+   4. Print a message (indented)
+      - On the next line, indented, write the code that you want to execute if the condition is true. In this case, print the message "It's a hot day!". Make sure the indentation is consistent (4 spaces).
 ```python
-import math # Import math module (only need to do this once at the top in a real script)
-sqrt_value = math.sqrt(user_number) if user_number >= 0 else "Undefined for negative numbers"
-sine_value = math.sin(math.radians(user_number))  # Assuming user enters an angle in degrees
+    print("It's a hot day!")  # Indented 4 spaces
 ```
 
-   5. Display the results with formatted output (using f-strings):
-      - Use print() and f-strings to display the results of the arithmetic operations and the math functions. Format the output to two decimal places using .2f.
-```python
-print("\nArithmetic Operations:")
-print(f"User number + 10 = {addition:.2f}")
-print(f"User number - 5  = {subtraction:.2f}")
-print(f"User number * 2  = {multiplication:.2f}")
-print(f"User number / 3  = {division:.2f}")
-
-print("\nMath Library Functions:")
-print(f"Square root of {user_number:.2f} is: {sqrt_value}")
-print(f"Sine of {user_number:.2f} degrees is: {sine_value:.4f}") # Sine formatted to 4 decimal places
-```
+   5. Complete Code: Combine the steps above to form the complete program.
 
    6. Run the code: Execute your Python code.
-   7. Observe the output: Compare your output with the "Desired Output" shown above.
-   8. Discussion (Notable Observations):
-      - How does this exercise combine the concepts you've learned in previous exercises?
-      - Why is it important to convert the user input to a float?
-      - Explain how the conditional expression (if user_number >= 0 else ...) is used to handle the error when calculating the square root of a negative number.
-      - Why is it important to format the output? How do f-strings make formatting easier?
-      - What other error handling techniques could you use? (Hint: try-except blocks)
+   7. Observe the output: 
+      - If temperature is greater than 30, you should see the message printed.
+      - If temperature is 30 or less, nothing will be printed.
+     
+   8. Experiment: Change the value of temperature and run the code again. Try values greater than 30 and values less than or equal to 30. Observe the different outputs.
+
+   9. Try other comparison operators: Change the > operator to other comparison operators (e.g., <, >=, <=, ==, !=) and see how the program's behavior changes. For example, try: if temperature <= 30:
+
+   **Conclusion**
+   This exercise introduced the fundamental concept of the if statement in Python. You learned how to write a simple if statement, how a condition controls the execution of code, and the importance of indentation. You also practiced using comparison operators and following Python best practices. The if statement is a powerful tool for creating programs that can make decisions based on different conditions. This is a building block for more complex control flow structures you'll learn later.
 
 ### **Step 4: Push Changes to GitHub**
 Once you've completed your changes, follow these steps to upload your work to your GitHub repository.
@@ -193,7 +172,7 @@ git add .
    Write a meaningful commit message:
    
 ```bash
-git commit -m "Submitting Python Week 02 - Session 01 - Exercise 05"
+git commit -m "Submitting Python Week 04 - Laboratory # 08"
 ```
    
 4. Push your changes to GitHub:
