@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Run the Python program and capture the output
-output=$(python exercise_05.py < tests/input.txt)
+output=$(python if_statement_basic.py < tests/input.txt)
 
 # Expected output
 expected=$(cat tests/output.txt)
